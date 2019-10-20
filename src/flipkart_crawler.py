@@ -27,5 +27,7 @@ all_product_reviews = flipkart_review_template_filler.get_all_reviews_from_soup(
 print("Reviews")
 print(str(all_product_reviews))
 
-utils.create_json_file_from_dict("generated/reviews.json", all_product_reviews)
+generated_file_name = utils.get_product_name_from_url(url)
+
+utils.create_json_file_from_dict("generated/" + generated_file_name + ".json", all_product_reviews)
 
