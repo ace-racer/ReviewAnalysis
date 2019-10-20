@@ -45,14 +45,14 @@
             "attribute_value": "_3LYOAd _3sxSiS"     
         } 
     ],
-    "review_date_css_class":  [
+    "review_date":  [
         {
             "type": "p",
             "attribute": "class",
             "attribute_value": "_3LYOAd"     
         } 
     ],
-    "review_upvotes_css_class": [
+    "review_upvotes": [
         {
             "type": "div",
             "attribute": "class",
@@ -64,7 +64,7 @@
             "attribute_value": "_1_BQL8"     
         }  
     ],
-    "review_downvotes_css_class": [
+    "review_downvotes": [
         {
             "type": "div",
             "attribute": "class",

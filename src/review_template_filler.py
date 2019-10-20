@@ -1,4 +1,5 @@
 from template import ReviewTemplate
+from copy import deepcopy
 
 class ReviewTemplateFiller:
     def __init__(self):
@@ -8,16 +9,30 @@ class ReviewTemplateFiller:
         """
         """
         if parent_soup and html_elements_to_traverse:
-            while len(html_elements_to_traverse) > 0:
-                element_to_traverse = html_elements_to_traverse.pop(0)
+            current_elements_to_traverse = html_elements_to_traverse
+            itr = 0
+            num_elements_to_traverse = len(current_elements_to_traverse)
+            elements_from_soup = None
+
+            print(f"Number of elements to traverse: {num_elements_to_traverse}")
+            while itr < num_elements_to_traverse:
+                print(f"ITR value {itr}")
+                element_to_traverse = current_elements_to_traverse[itr]
                 if element_to_traverse.get("attribute") == "class":
                     elements_from_soup = parent_soup.find_all(element_to_traverse.get("type"), class_ = element_to_traverse.get("attribute_value"))
-                    if should_get_all:
-                        return elements_from_soup
+                    if elements_from_soup:
+                        if should_get_all:
+                            return elements_from_soup
+                        else:
+                            parent_soup = elements_from_soup[0]
+                            itr += 1
                     else:
-                        return elements_from_soup[0]
-                    
+                        return None
+                else:
+                    itr += 1
 
+            return elements_from_soup[0]
+                    
         return None
 
 
