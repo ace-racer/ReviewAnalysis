@@ -16,6 +16,7 @@ if "reviews" not in url:
     sys.exit(1)
     
 response = requests.get(url)
+print(f"Response code: {response.status_code}")
 
 html_soup = BeautifulSoup(response.text, 'html.parser')
 
