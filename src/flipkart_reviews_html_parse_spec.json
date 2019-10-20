@@ -1,0 +1,79 @@
+{
+    "reviews_container": [
+        {
+        "type": "div",
+        "attribute": "class",
+        "attribute_value": "col _390CkK _1gY8H-"
+        }
+    ],
+    "rating": [
+        {
+        "type": "div",
+        "attribute": "class",
+        "attribute_value": "hGSR34 E_uFuv"       
+        }
+    ],
+    "title": [
+        {
+            "type": "div",
+            "attribute": "class",
+            "attribute_value": "hGSR34 E_uFuv"     
+        },
+        {
+            "type": "p",
+            "attribute": "class",
+            "attribute_value": "_2xg6Ul" 
+        }
+    ],
+    "review_text": [
+        {
+            "type": "div",
+            "attribute": "class",
+            "attribute_value": "qwjRop"     
+        },
+        {
+            "type": "div"    
+        },
+        {
+            "type": "div"   
+        }   
+    ],
+    "reviewer": [
+        {
+            "type": "p",
+            "attribute": "class",
+            "attribute_value": "_3LYOAd _3sxSiS"     
+        } 
+    ],
+    "review_date_css_class":  [
+        {
+            "type": "p",
+            "attribute": "class",
+            "attribute_value": "_3LYOAd"     
+        } 
+    ],
+    "review_upvotes_css_class": [
+        {
+            "type": "div",
+            "attribute": "class",
+            "attribute_value": "_2ZibVB"     
+        },
+        {
+            "type": "span",
+            "attribute": "class",
+            "attribute_value": "_1_BQL8"     
+        }  
+    ],
+    "review_downvotes_css_class": [
+        {
+            "type": "div",
+            "attribute": "class",
+            "attribute_value": "_2ZibVB _1FP7V7"     
+        },
+        {
+            "type": "span",
+            "attribute": "class",
+            "attribute_value": "_1_BQL8"     
+        }  
+    ]
+}

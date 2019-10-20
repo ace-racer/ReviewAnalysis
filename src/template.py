@@ -7,3 +7,5 @@ class ReviewTemplate:
         self.review_date = ""
         self.review_upvotes = 0
         self.review_downvotes = 0
+
+    

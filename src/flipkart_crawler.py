@@ -9,6 +9,11 @@ url="https://www.flipkart.com/samsung-super-6-138cm-55-inch-ultra-hd-4k-led-smar
 specific_review_css_class = "col _390CkK _1gY8H-"
 
 
+def get_review_details(review_div):
+    if review_div:
+        review_template = ReviewTemplate()
+        review_template.rating = 
+
 if "reviews" not in url:
     print("The URL is not related to product reviews")
     sys.exit(1)
