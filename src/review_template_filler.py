@@ -23,6 +23,7 @@ class ReviewTemplateFiller:
         """
         if complete_soup and html_parse_spec:
             reviews_soup = self.get_value_from_soup(complete_soup, html_parse_spec.get("reviews_container"))
+            print(f"Number of reviews from reviews soup {len(reviews_soup)}")
             all_extracted_reviews = []
             if reviews_soup is not None:
                 for review in reviews_soup:
@@ -32,9 +33,10 @@ class ReviewTemplateFiller:
                             property_soup = self.get_value_from_soup(review, html_parse_spec[property_name])
                             if property_soup is not None:
                                 property_value = property_soup.text
+                                print(f"Property name: {property_name} Property value: {property_value}")
                                 setattr(review_template, property_name, property_value)
                         
-                        all_extracted_reviews.append(review_template)
+                    all_extracted_reviews.append(review_template.__dict__)
 
             return all_extracted_reviews
 

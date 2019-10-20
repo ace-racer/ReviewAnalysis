@@ -24,5 +24,5 @@ html_parse_spec = utils.get_json_file_contents_as_dict("parse_specs/flipkart_rev
 all_product_reviews = flipkart_review_template_filler.get_all_reviews_from_soup(html_soup, html_parse_spec)
 
 print("Reviews")
-print(all_product_reviews)
+print(str(all_product_reviews))
 
