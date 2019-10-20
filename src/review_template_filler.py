@@ -14,9 +14,9 @@ class ReviewTemplateFiller:
             num_elements_to_traverse = len(current_elements_to_traverse)
             elements_from_soup = None
 
-            print(f"Number of elements to traverse: {num_elements_to_traverse}")
+            # print(f"Number of elements to traverse: {num_elements_to_traverse}")
             while itr < num_elements_to_traverse:
-                print(f"ITR value {itr}")
+                # print(f"ITR value {itr}")
                 element_to_traverse = current_elements_to_traverse[itr]
                 if element_to_traverse.get("attribute") == "class":
                     elements_from_soup = parent_soup.find_all(element_to_traverse.get("type"), class_ = element_to_traverse.get("attribute_value"))
@@ -51,7 +51,7 @@ class ReviewTemplateFiller:
                             property_soup = self.get_value_from_soup(review, html_parse_spec[property_name])
                             if property_soup is not None:
                                 property_value = property_soup.text
-                                print(f"Property name: {property_name} Property value: {property_value}")
+                                # print(f"Property name: {property_name} Property value: {property_value}")
                                 setattr(review_template, property_name, property_value)
                         
                     all_extracted_reviews.append(review_template.__dict__)
