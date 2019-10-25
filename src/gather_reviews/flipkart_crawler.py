@@ -7,7 +7,7 @@ from template import ReviewTemplate
 from review_template_filler import ReviewTemplateFiller
 
 # url="https://www.flipkart.com/samsung-super-6-108cm-43-inch-ultra-hd-4k-led-smart-tv/p/itmfdzq6khv2pcvz"
-url="https://www.flipkart.com/samsung-super-6-138cm-55-inch-ultra-hd-4k-led-smart-tv/product-reviews/itmfdzq6xahtdzur?pid=TVSFDZQ6UPSJBGVN"
+url="https://www.flipkart.com/samsung-galaxy-a70-black-128-gb/product-reviews/itmffhc79jwkwzrw?pid=MOBFFHC7GQZCF8YM"
 num_pages=3
 
 
