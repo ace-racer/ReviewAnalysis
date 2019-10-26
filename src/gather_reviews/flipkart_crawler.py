@@ -31,7 +31,12 @@ def save_reviews_for_flipkart_product(url, generated_files_base_location):
         return generated_file_location
 
     flipkart_review_template_filler = ReviewTemplateFiller()
-    html_parse_spec = utils.get_json_file_contents_as_dict("parse_specs/flipkart_reviews_html_parse_spec.json")
+    path = os.path.abspath(__file__)
+    print(path)
+    dir_path = os.path.dirname(path)
+    parse_specs_loc = os.path.join(dir_path, "parse_specs", "flipkart_reviews_html_parse_spec.json")
+    print(parse_specs_loc)
+    html_parse_spec = utils.get_json_file_contents_as_dict(parse_specs_loc)
 
     response = requests.get(url)
     print(f"Response code: {response.status_code}")
@@ -48,7 +53,7 @@ def save_reviews_for_flipkart_product(url, generated_files_base_location):
         product_review_url = url + "&page=" + str(current_page)
         response = requests.get(product_review_url)
         if response.status_code == 200:
-            print(f"Response code: {response.status_code}")
+            # print(f"Response code: {response.status_code}")
             html_soup = BeautifulSoup(response.text, 'html.parser')
             product_reviews = flipkart_review_template_filler.get_all_reviews_from_soup(html_soup, html_parse_spec)
             all_product_reviews.extend(product_reviews)
