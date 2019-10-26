@@ -7,6 +7,8 @@ import utils
 from template import ReviewTemplate
 from review_template_filler import ReviewTemplateFiller
 
+MAX_REVIEW_PAGES = 50
+
 def get_num_pages_of_reviews(html_soup):
     num_pages = 1
     navigation_details = html_soup.find("div", class_ = "_2zg3yZ _3KSYCY")
@@ -14,7 +16,11 @@ def get_num_pages_of_reviews(html_soup):
         num_pages_span = navigation_details.find("span")
         if num_pages_span:
             num_pages_text = num_pages_span.text
-            num_pages = int(num_pages_text.replace("Page 1 of", "").strip())
+            num_pages = (num_pages_text.replace("Page 1 of", "").strip())
+
+    num_pages = int(num_pages.replace(",", ""))
+    if num_pages > MAX_REVIEW_PAGES:
+        num_pages = MAX_REVIEW_PAGES
 
     print(f"Number of pages for this product is {num_pages}")
     return num_pages
